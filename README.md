@@ -78,10 +78,10 @@ Para terminar de completar este apartado de la prueba, sigue estos pasos:
 En la Imagen 2, haz clic en el enlace azul que dice "Airflow" (bajo la columna "Webserver de Airflow"). Se abrirá una pestaña nueva con la interfaz propia de Apache Airflow.
 Busca en la lista un DAG llamado test (que es el nombre que le pusiste en el código).
 
-<img width="1576" height="512" alt="Captura de pantalla 2026-03-24 201515" src="https://github.com/user-attachments/assets/67da7134-74b8-470c-9402-938d9a4fb364" />
 
 
 <img width="1564" height="458" alt="Captura de pantalla 2026-03-24 202005" src="https://github.com/user-attachments/assets/f93ed373-7108-406f-a474-78406c7a481e" />
+
 
 
 Actívalo: Si ves un interruptor (Toggle) al lado del nombre en "Off", cámbialo a "On".
