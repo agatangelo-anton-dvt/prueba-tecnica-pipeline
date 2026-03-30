@@ -29,11 +29,13 @@ Se desarrolló una solución modular con dos clases principales:
 
 
 
+
 2. Almacenamiento y Transformación (BigQuery)
 Los datos se almacenan inicialmente en `SANDBOX_mi_app.raw_data`. Posteriormente, mediante el script `transform.sql`, se procesan e insertan en `INTEGRATION.integration_prueba_tecnica`.
 - **Idempotencia:** Se utiliza la sentencia `MERGE` para asegurar que ejecuciones repetidas no dupliquen los datos.
 
 <img width="631" height="256" alt="Captura de pantalla 2026-03-24 200253" src="https://github.com/user-attachments/assets/8e4fe5d2-98ae-4bd1-8825-840b0322261c" />
+
 
 
 3. Orquestación (Airflow)
@@ -57,14 +59,14 @@ En Google Cloud, busca Composer.
 Dale a "Crear entorno" -> Composer 2.
 Ponle un nombre (airflow-prueba-técnica) y elige la ubicación más cercana. Nota: Tardará unos 15-20 minutos en crearse.
 
-<img width="1529" height="205" alt="image" src="https://github.com/user-attachments/assets/0a8b7a93-4d79-46c7-92cc-5728bfb7a86f" />
+<img width="1529" height="205" alt="Captura de pantalla 2026-03-24 201126" src="https://github.com/user-attachments/assets/e9befaa3-b44b-4544-a4d0-664635d8b62f" />
 
 2. Subir el DAG (Tu archivo dag_test.py)
 Una vez creado el entorno:
 Verás una columna que dice Carpeta de DAGs. Haz clic en el enlace (te llevará a un bucket de Google Cloud Storage).
 Dale a Subir archivos y sube el archivo dag_test.py que ya tienes programado.
 
-<img width="1529" height="205" alt="Captura de pantalla 2026-03-24 201126" src="https://github.com/user-attachments/assets/e9befaa3-b44b-4544-a4d0-664635d8b62f" />
+<img width="1576" height="512" alt="Captura de pantalla 2026-03-24 201515" src="https://github.com/user-attachments/assets/67da7134-74b8-470c-9402-938d9a4fb364" />
 
 
 Automáticamente, Airflow lo detectará y empezará a ejecutarlo según el horario que pusiste (schedule_interval).
