@@ -25,14 +25,16 @@ Se desarrolló una solución modular con dos clases principales:
 - `APIConnector`: Descarga los primeros 100 registros de posts de ejemplo.
 - `BQUploader`: Gestiona la conexión y subida de datos a BigQuery mediante `google-cloud-bigquery`.
 
-<img width="712" height="614" alt="image" src="https://github.com/user-attachments/assets/7e42c0fc-5b47-4d01-82b0-8e48746a6c87" />
+<img width="712" height="614" alt="Captura de pantalla 2026-03-24 200151" src="https://github.com/user-attachments/assets/86991dec-ad4d-4b68-8c89-24cbdfd3aa70" />
+
 
 
 2. Almacenamiento y Transformación (BigQuery)
 Los datos se almacenan inicialmente en `SANDBOX_mi_app.raw_data`. Posteriormente, mediante el script `transform.sql`, se procesan e insertan en `INTEGRATION.integration_prueba_tecnica`.
 - **Idempotencia:** Se utiliza la sentencia `MERGE` para asegurar que ejecuciones repetidas no dupliquen los datos.
 
-<img width="631" height="256" alt="image" src="https://github.com/user-attachments/assets/c0950bcf-82f5-46f4-8515-d3f4008e5223" />
+<img width="631" height="256" alt="Captura de pantalla 2026-03-24 200253" src="https://github.com/user-attachments/assets/8e4fe5d2-98ae-4bd1-8825-840b0322261c" />
+
 
 3. Orquestación (Airflow)
 Se diseñó un DAG que incluye:
@@ -62,7 +64,8 @@ Una vez creado el entorno:
 Verás una columna que dice Carpeta de DAGs. Haz clic en el enlace (te llevará a un bucket de Google Cloud Storage).
 Dale a Subir archivos y sube el archivo dag_test.py que ya tienes programado.
 
-<img width="1576" height="512" alt="image" src="https://github.com/user-attachments/assets/46ebbaf8-a403-48dd-bb0e-33ee89c007db" />
+<img width="1529" height="205" alt="Captura de pantalla 2026-03-24 201126" src="https://github.com/user-attachments/assets/e9befaa3-b44b-4544-a4d0-664635d8b62f" />
+
 
 Automáticamente, Airflow lo detectará y empezará a ejecutarlo según el horario que pusiste (schedule_interval).
 
@@ -73,9 +76,14 @@ Para terminar de completar este apartado de la prueba, sigue estos pasos:
 En la Imagen 2, haz clic en el enlace azul que dice "Airflow" (bajo la columna "Webserver de Airflow"). Se abrirá una pestaña nueva con la interfaz propia de Apache Airflow.
 Busca en la lista un DAG llamado test (que es el nombre que le pusiste en el código).
 
-<img width="1564" height="458" alt="image" src="https://github.com/user-attachments/assets/d2b30a77-8be1-415e-aefa-a03c862434a9" />
+<img width="1576" height="512" alt="Captura de pantalla 2026-03-24 201515" src="https://github.com/user-attachments/assets/67da7134-74b8-470c-9402-938d9a4fb364" />
+
+
+<img width="1564" height="458" alt="Captura de pantalla 2026-03-24 202005" src="https://github.com/user-attachments/assets/f93ed373-7108-406f-a474-78406c7a481e" />
+
 
 Actívalo: Si ves un interruptor (Toggle) al lado del nombre en "Off", cámbialo a "On".
 Mira el gráfico: Haz clic en el nombre test y luego en la pestaña "Graph". Deberías ver la estructura que programaste: start -> tasks -> diff_task -> end.
 
-<img width="1566" height="692" alt="image" src="https://github.com/user-attachments/assets/454c4502-efee-413d-8d54-ca18f70d7633" />
+<img width="1579" height="703" alt="Captura de pantalla 2026-03-25 080154" src="https://github.com/user-attachments/assets/9eed9849-4397-444d-a934-23724ba8311c" />
+
